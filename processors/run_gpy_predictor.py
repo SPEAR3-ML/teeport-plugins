@@ -1,20 +1,15 @@
-# import local module from parent dir
-# import os
-# import sys
-# import inspect
-# currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
-# parentdir = os.path.dirname(currentdir)
-# sys.path.insert(0,parentdir)
-
 import nest_asyncio
 nest_asyncio.apply()
 import asyncio
+from functools import partial
 
 from teeport import Teeport
 from opt.processors.gpy_predictor import process
 
+params = dict(theta=np.array([[0.4]]), var='auto', sigma_n=np.array([[1e-4]]))
+
 teeport = Teeport('ws://lambda-sp3:8090/')
-teeport.run_processor(process, 'GPy Predictor')
+teeport.run_processor(partial(process, params=params), 'GPy Predictor: no opt')
 print('processor is running...')
 
 loop = asyncio.get_event_loop()
