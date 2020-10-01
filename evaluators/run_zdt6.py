@@ -6,8 +6,8 @@ from teeport import Teeport
 from opt.evaluators.zdt import evaluate
 
 teeport = Teeport('ws://lambda-sp3:8090/')
-teeport.run_evaluator(evaluate, 'ZDT1', name='ZDT1', configs={
-	'prob_id': 1,
+teeport.run_evaluator(evaluate, 'ZDT6', name='ZDT6', configs={
+	'prob_id': 6,
     'D': 30,
     'wall_time': 1
 })
