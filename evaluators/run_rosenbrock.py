@@ -9,7 +9,8 @@ teeport = Teeport('ws://lambda-sp3:8090/')
 teeport.run_evaluator(evaluate, 'Rosenbrock', name='Rosenbrock', configs={
     'vrange': [0, 1],
     'wall_time': 1,
-    'noise_level': 0
+    'noise_level': 0,
+    'ret_origin': False
 })
 print('evaluator is running...')
 
