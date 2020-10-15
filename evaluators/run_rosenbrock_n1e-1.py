@@ -7,7 +7,7 @@ from opt.evaluators.rosenbrock import evaluate
 
 teeport = Teeport('ws://lambda-sp3:8090/')
 teeport.run_evaluator(evaluate, 'Rosenbrock', name='Rosenbrock Noise 0.1', configs={
-    'vrange': [0, 1],
+    'vrange': [-2, 2],
     'wall_time': 1,
     'noise_level': 1e-1,
     'ret_origin': True
